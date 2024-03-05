@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_PostProcessingItem Include="6003CEM.app/Contents/MacOS/6003CEM">
+      <BCSymbolMapName>6003CEM.bcsymbolmap</BCSymbolMapName>
+      <NoDSymUtil>true</NoDSymUtil>
+      <dSYMSourcePathExists>false</dSYMSourcePathExists>
+      <NoSymbolStrip>true</NoSymbolStrip>
+      <dSYMInfoPlistRelativePath>6003CEM.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
+      <SymbolFile>/Users/kian/RiderProjects/App/6003CEM/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/mtouch-symbols.list</SymbolFile>
+      <DSymName>6003CEM.app.dSYM</DSymName>
+      <SourceProjectPath>/Users/kian/RiderProjects/App/6003CEM</SourceProjectPath>
+    </_PostProcessingItem>
+  </ItemGroup>
+</Project>
