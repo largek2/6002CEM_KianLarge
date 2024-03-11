@@ -28,6 +28,42 @@ build_metadata.AdditionalFiles.ManifestResourceName = _6003CEM.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
+[/Users/kian/RiderProjects/App/6003CEM/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = _6003CEM.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[/Users/kian/RiderProjects/App/6003CEM/Pages/CartPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = _6003CEM.Pages.CartPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/CartPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/CartPage.xaml
+
+[/Users/kian/RiderProjects/App/6003CEM/Pages/FrontPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = _6003CEM.Pages.FrontPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/FrontPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/FrontPage.xaml
+
+[/Users/kian/RiderProjects/App/6003CEM/Pages/HomePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = _6003CEM.Pages.HomePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/HomePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/HomePage.xaml
+
+[/Users/kian/RiderProjects/App/6003CEM/Pages/ProfilePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = _6003CEM.Pages.ProfilePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/ProfilePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/ProfilePage.xaml
+
+[/Users/kian/RiderProjects/App/6003CEM/Pages/SigninPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = _6003CEM.Pages.SigninPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/SigninPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/SigninPage.xaml
+
 [/Users/kian/RiderProjects/App/6003CEM/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = _6003CEM.Resources.Styles.Colors.xaml
@@ -39,9 +75,3 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = _6003CEM.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Styles.xaml
-
-[/Users/kian/RiderProjects/App/6003CEM/Views/MainPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = _6003CEM.Views.MainPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Views/MainPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Views/MainPage.xaml
