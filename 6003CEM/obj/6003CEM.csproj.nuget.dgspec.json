@@ -71,6 +71,10 @@
               "target": "Package",
               "version": "[8.0.1, )",
               "autoReferenced": true
+            },
+            "supabase-csharp": {
+              "target": "Package",
+              "version": "[0.15.0, )"
             }
           },
           "imports": [
@@ -118,6 +122,10 @@
               "target": "Package",
               "version": "[8.0.1, )",
               "autoReferenced": true
+            },
+            "supabase-csharp": {
+              "target": "Package",
+              "version": "[0.15.0, )"
             }
           },
           "imports": [
@@ -165,6 +173,10 @@
               "target": "Package",
               "version": "[8.0.1, )",
               "autoReferenced": true
+            },
+            "supabase-csharp": {
+              "target": "Package",
+              "version": "[0.15.0, )"
             }
           },
           "imports": [

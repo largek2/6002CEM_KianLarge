@@ -17,4 +17,14 @@ public partial class FrontPage : ContentPage
     {
         await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
     }
+
+    private async void Button_SignIn(object? sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(SigninPage));
+    }
+
+    private async void Button_Register(object? sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(RegisterPage));
+    }
 }

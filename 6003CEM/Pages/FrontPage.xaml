@@ -4,8 +4,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="_6003CEM.Pages.FrontPage">
     <VerticalStackLayout Spacing = "15">
+        <Label />
         <Button Clicked = "Button_Clicked" 
                 Text = "Enter the app"
+                HorizontalOptions="Center"
+                VerticalOptions="Center" />
+        <Button Clicked = "Button_SignIn" 
+                Text = "Sign in"
+                HorizontalOptions="Center"
+                VerticalOptions="Center" />
+        <Button Clicked = "Button_Register" 
+                Text = "Register"
                 HorizontalOptions="Center"
                 VerticalOptions="Center" />
     </VerticalStackLayout>

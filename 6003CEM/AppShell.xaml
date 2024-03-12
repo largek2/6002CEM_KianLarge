@@ -14,29 +14,28 @@
         Route="MainPage" />-->
     
     <ShellContent ContentTemplate="{DataTemplate pages:FrontPage}"
-                  Title="Front"
+                  Title="Welcome To App"
                   Shell.FlyoutBehavior="Disabled" />
     
     <TabBar>
-        
+        <Tab Icon = "home.png">
         <ShellContent 
             Title="Home"
             ContentTemplate="{DataTemplate pages:HomePage}"
-            Icon="home" 
             Route="HomePage" />
-        
+        </Tab>
+        <Tab Icon = "cart.png">
         <ShellContent 
             Title="Cart"
             ContentTemplate="{DataTemplate pages:CartPage}"
-            Icon="cart" 
             Route="CartPage" />
-        
+        </Tab>
+        <Tab Icon = "user.png">
         <ShellContent 
-            Title="Profile"
+            Title="My Profile"
             ContentTemplate="{DataTemplate pages:ProfilePage}"
-            Icon="user"
             Route="ProfilePage" />
-        
+        </Tab>
     </TabBar>    
 
 </Shell>
