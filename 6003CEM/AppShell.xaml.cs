@@ -10,18 +10,22 @@ public partial class AppShell : Shell
         RegisterRoutes();
     }
 
-    private readonly static Type[] _routablePageTypes =
+    private readonly static Type[] RoutablePageTypes =
     [
         typeof(SigninPage),
         typeof(RegisterPage),
-        typeof(OrderDescriptionPage),
     ];
 
     private void RegisterRoutes()
     {
-        foreach (var pageType in _routablePageTypes)
+        foreach (var pageType in RoutablePageTypes)
         {
             Routing.RegisterRoute(pageType.Name, pageType);
         }
+    }
+
+    private async void Signout_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.DisplayAlert("Alert", "You have just signed out", "Okay");
     }
 }

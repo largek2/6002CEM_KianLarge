@@ -330,6 +330,14 @@
 /Users/kian/RiderProjects/App/6003CEM/obj/Debug/net8.0-ios/iossimulator-arm64/6003CEM.pdb
 /Users/kian/RiderProjects/App/6003CEM/obj/Debug/net8.0-ios/iossimulator-arm64/6003CEM.genruntimeconfig.cache
 /Users/kian/RiderProjects/App/6003CEM/obj/Debug/net8.0-ios/iossimulator-arm64/ref/6003CEM.dll
+/Users/kian/RiderProjects/App/6003CEM/obj/Debug/net8.0-ios/iossimulator-arm64/resizetizer/r/right_arrow@3x.png
+/Users/kian/RiderProjects/App/6003CEM/obj/Debug/net8.0-ios/iossimulator-arm64/resizetizer/r/right_arrow@2x.png
+/Users/kian/RiderProjects/App/6003CEM/obj/Debug/net8.0-ios/iossimulator-arm64/resizetizer/r/right_arrow.png
+/Users/kian/RiderProjects/App/6003CEM/obj/Debug/net8.0-ios/iossimulator-arm64/resizetizer/r/Resources/taco.png
+/Users/kian/RiderProjects/App/6003CEM/obj/Debug/net8.0-ios/iossimulator-arm64/resizetizer/r/Resources/logo.png
+/Users/kian/RiderProjects/App/6003CEM/obj/Debug/net8.0-ios/iossimulator-arm64/resizetizer/r/sign_out@3x.png
+/Users/kian/RiderProjects/App/6003CEM/obj/Debug/net8.0-ios/iossimulator-arm64/resizetizer/r/sign_out@2x.png
+/Users/kian/RiderProjects/App/6003CEM/obj/Debug/net8.0-ios/iossimulator-arm64/resizetizer/r/sign_out.png
 /Users/kian/RiderProjects/App/6003CEM/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/Microsoft.CSharp.stamp
 /Users/kian/RiderProjects/App/6003CEM/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/Microsoft.Extensions.Configuration.Abstractions.stamp
 /Users/kian/RiderProjects/App/6003CEM/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/Microsoft.Extensions.Configuration.stamp

@@ -14,28 +14,109 @@
         Route="MainPage" />-->
     
     <ShellContent ContentTemplate="{DataTemplate pages:FrontPage}"
-                  Title="Welcome To App"
-                  Shell.FlyoutBehavior="Disabled" />
+                  Shell.FlyoutBehavior="Disabled" 
+                  Shell.FlyoutItemIsVisible="False"/>
     
-    <TabBar>
-        <Tab Icon = "home.png">
+    <TabBar FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent 
             Title="Home"
+            Icon = "home.png"
             ContentTemplate="{DataTemplate pages:HomePage}"
             Route="HomePage" />
-        </Tab>
-        <Tab Icon = "cart.png">
+        
         <ShellContent 
             Title="Cart"
+            Icon = "cart.png"
             ContentTemplate="{DataTemplate pages:CartPage}"
             Route="CartPage" />
-        </Tab>
-        <Tab Icon = "user.png">
+        
         <ShellContent 
             Title="My Profile"
+            Icon = "user.png"
             ContentTemplate="{DataTemplate pages:ProfilePage}"
             Route="ProfilePage" />
-        </Tab>
     </TabBar>    
+    
+    <MenuItem Text = "Sign out" 
+              Clicked="Signout_Clicked"/>
+    
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid 
+                Padding = "10"
+                ColumnDefinitions = "Auto, *, Auto"
+                RowDefinitions = "Auto, Auto"
+                ColumnSpacing = "20"
+                RowSpacing = "15" >
+                <Label 
+                    Grid.Column="1"
+                    FontSize="18"
+                    Text="{Binding Title}"
+                    TextColor="Crimson" 
+                    FontAttributes="Bold" />
+                <Image 
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Source="sign_out"
+                    HeightRequest="24"
+                    WidthRequest="24" />
+                <BoxView 
+                    Grid.Row="0"
+                    HeightRequest="1" />
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid 
+                Padding = "10"
+                ColumnDefinitions = "Auto, *, Auto"
+                RowDefinitions = "Auto, Auto"
+                ColumnSpacing = "20"
+                RowSpacing = "5" >
+                <Label 
+                    Grid.Column="1"
+                    FontSize="18"
+                    Text="{Binding Title}"
+                    TextColor="Crimson" 
+                    FontAttributes="Bold" />
+                <Image 
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Source="right_arrow"
+                    HeightRequest="24"
+                    WidthRequest="24" />
+                <BoxView 
+                    Grid.Row="0"
+                    HeightRequest="1" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
 
+    <Shell.FlyoutHeader>
+        <Border BackgroundColor="Crimson"
+                Padding="10" 
+                StrokeThickness="0" >
+            <VerticalStackLayout HorizontalOptions="Center">
+                <Image Source = "logo.png"
+                       HeightRequest="160"
+                       WidthRequest="150"
+                       HorizontalOptions="Center" />
+            </VerticalStackLayout>        
+        </Border>        
+    </Shell.FlyoutHeader>
+    
+    <Shell.FlyoutFooter>
+        <Border BackgroundColor="Crimson"
+                StrokeThickness="0"
+                Padding="10" >
+            <Label Text = "Mexican Fiesta" 
+                   FontAttributes="Bold"
+                   FontSize="15"
+                   TextColor="White"
+                   HorizontalOptions="Center" />
+        </Border>
+    </Shell.FlyoutFooter>
+    
 </Shell>

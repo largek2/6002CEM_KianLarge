@@ -3,19 +3,42 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="_6003CEM.Pages.FrontPage">
-    <VerticalStackLayout Spacing = "15">
-        <Label />
-        <Button Clicked = "Button_Clicked" 
-                Text = "Enter the app"
-                HorizontalOptions="Center"
-                VerticalOptions="Center" />
-        <Button Clicked = "Button_SignIn" 
-                Text = "Sign in"
-                HorizontalOptions="Center"
-                VerticalOptions="Center" />
-        <Button Clicked = "Button_Register" 
-                Text = "Register"
-                HorizontalOptions="Center"
-                VerticalOptions="Center" />
-    </VerticalStackLayout>
+        <Grid RowDefinitions="*, Auto"
+              Padding="0, 80" >
+            <VerticalStackLayout Spacing = "15"
+                                 Grid.Row="0"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center" >
+                <Image Source = "logo.png"
+                       HeightRequest="250"
+                       WidthRequest="250" />
+                <Label Text = "Welcome to Mexican Fiesta"
+                       FontSize="25"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+                <Label Text = "More Stores Coming Soon!"
+                       FontSize="16"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+                <Button Clicked = "Button_Clicked" 
+                        Text = "Enter the app"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" />
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Row="1"
+                                 Spacing="20">
+                <Button Clicked = "Button_SignIn" 
+                        WidthRequest="100"
+                        Text = "Sign in"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" />
+                <Button Clicked = "Button_Register" 
+                        WidthRequest="100"
+                        Text = "Register"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" />
+            </VerticalStackLayout>
+        </Grid> 
 </ContentPage>
+        
+        
