@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_6003CEM.Pages.ProductListingPage"
+             xmlns:model="clr-namespace:_6003CEM.Models"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:pagemodel="clr-namespace:_6003CEM.PageModels"
+             x:DataType="pagemodel:ProductListingPageModel">
+
+    <!-- Define Resources -->
+    <ContentPage.Resources>
+        <toolkit:BoolToObjectConverter
+            x:Key="BoolToObjectConverter"
+            FalseObject="Not Completed ❌"
+            TrueObject="Completed ✔" />
+    </ContentPage.Resources>
+    <CollectionView.Behaviors>
+        <toolkit:EventToCommandBehavior Command="{Binding GetProductsCommand}" EventName="Appearing" />
+    </CollectionView.Behaviors>
+
+    <!-- Content of the page -->
+    <ContentPage.Content>
+        <Grid Margin="20" RowDefinitions="Auto,*" RowSpacing="10">
+            <Grid Grid.Row="0" ColumnDefinitions="*,*">
+                <Label Grid.Column="0" 
+                       FontAttributes="Bold" 
+                       FontSize="Title" 
+                       Text="Add New Product" />
+                <Button Grid.Column="1" 
+                        BackgroundColor="Crimson" 
+                        Command="{Binding AddProductCommand}" 
+                        HorizontalOptions="End" 
+                        Text="Add" 
+                        TextColor="#eff5f3" />
+            </Grid>
+            <CollectionView Grid.Row="1" ItemsSource="{Binding Products}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="4" Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Product">
+                        <Border
+                            Padding="15"
+                            Stroke="Dimgray"
+                            Background="#601d2021"
+                            StrokeThickness="2">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="10,10,10,10" />
+                            </Border.StrokeShape>
+                            <Grid RowDefinitions="Auto,*" RowSpacing="4">
+                                <Image
+                                    Grid.Row="0"
+                                    Aspect="AspectFill"
+                                    HeightRequest="200"
+                                    HorizontalOptions="Center"
+                                    Source="{Binding Image}"
+                                    VerticalOptions="Center" />
+                                <Grid Grid.Row="1" RowDefinitions="Auto,Auto,Auto">
+                                    <Label
+                                        Grid.Row="0"
+                                        FontAttributes="Bold"
+                                        FontSize="Medium"
+                                        Text="{Binding Title}" />
+                                    <Label
+                                        Grid.Row="1"
+                                        Margin="0,2"
+                                        FontSize="Small"
+                                        Text="{Binding Price}" />
+                                    <Grid
+                                        Grid.Row="2"
+                                        Margin="0,5"
+                                        ColumnDefinitions="Auto,Auto,*">
+                                        <Button
+                                            Grid.Column="1"
+                                            Margin="8,0"
+                                            BackgroundColor="Crimson"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type pagemodel:ProductListingPageModel}}, Path=DeleteProductCommand}"
+                                            CommandParameter="{Binding .}"
+                                            Text="Delete"
+                                            TextColor="#eff5f3" />    
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>   
+                </CollectionView.ItemTemplate>
+            </CollectionView>                
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

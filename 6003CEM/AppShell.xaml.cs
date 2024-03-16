@@ -8,6 +8,12 @@ public partial class AppShell : Shell
     {
         InitializeComponent();
         RegisterRoutes();
+        RegisterForRoute<AddProductPage>();
+    }
+
+    protected void RegisterForRoute<T>()
+    {
+        Routing.RegisterRoute(typeof(T).Name, typeof(T));
     }
 
     private readonly static Type[] RoutablePageTypes =
@@ -27,5 +33,6 @@ public partial class AppShell : Shell
     private async void Signout_Clicked(object sender, EventArgs e)
     {
         await Shell.Current.DisplayAlert("Alert", "You have just signed out", "Okay");
+        
     }
 }

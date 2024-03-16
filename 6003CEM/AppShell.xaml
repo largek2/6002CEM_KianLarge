@@ -14,7 +14,7 @@
         Route="MainPage" />-->
     
     <ShellContent ContentTemplate="{DataTemplate pages:FrontPage}"
-                  Shell.FlyoutBehavior="Disabled" 
+                  Shell.FlyoutBehavior="Disabled"
                   Shell.FlyoutItemIsVisible="False"/>
     
     <TabBar FlyoutDisplayOptions="AsMultipleItems">
@@ -35,6 +35,12 @@
             Icon = "user.png"
             ContentTemplate="{DataTemplate pages:ProfilePage}"
             Route="ProfilePage" />
+        
+        <ShellContent
+            Title = "Products"
+            Icon = "home.png"
+            ContentTemplate="{DataTemplate pages:ProductListingPage}"
+            Route="ProductListingPage" />
     </TabBar>    
     
     <MenuItem Text = "Sign out" 
@@ -43,7 +49,7 @@
     <Shell.MenuItemTemplate>
         <DataTemplate>
             <Grid 
-                Padding = "10"
+                Padding = "10,20, 10, 10"
                 ColumnDefinitions = "Auto, *, Auto"
                 RowDefinitions = "Auto, Auto"
                 ColumnSpacing = "20"
@@ -70,7 +76,7 @@
     <Shell.ItemTemplate>
         <DataTemplate>
             <Grid 
-                Padding = "10"
+                Padding = "10,20,10, 10"
                 ColumnDefinitions = "Auto, *, Auto"
                 RowDefinitions = "Auto, Auto"
                 ColumnSpacing = "20"

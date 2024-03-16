@@ -6,7 +6,14 @@
              Title = "Sign In"
              Shell.FlyoutBehavior="Disabled">
 
-    <ContentPage.Content>
-        
-    </ContentPage.Content>
+    <VerticalStackLayout>
+        <Label HorizontalOptions="Center" />
+        <Button Text = "Login" 
+                Clicked="Button_Clicked"
+                BorderColor="ForestGreen"
+                FontAttributes="Bold"
+                BorderWidth="1.5"
+                WidthRequest="140"/>
+    </VerticalStackLayout>
+    
 </ContentPage>

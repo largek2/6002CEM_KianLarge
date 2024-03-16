@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pagemodels="clr-namespace:_6003CEM.PageModels"
+             x:Class="_6003CEM.Pages.AddProductPage"
+             Title = "Add Product"
+             x:DataType="pagemodels:AddProductPageModel">
+    <ContentPage.Content>
+        <VerticalStackLayout Margin="20">
+            <Entry Placeholder="Title" Text="{Binding ProductTitle}" />
+            <Entry Placeholder="Price" Text="{Binding ProductPrice}" />
+            <Entry Placeholder="Image" Text="{Binding ProductImage}" />
+            <Button
+                BackgroundColor="Crimson"
+                Command="{Binding AddProductCommand}"
+                Text="Add Product"
+                TextColor="#eff5f3" />
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -20,23 +20,30 @@
                        FontSize="16"
                        FontAttributes="Bold"
                        HorizontalOptions="Center" />
+                <!--
                 <Button Clicked = "Button_Clicked" 
                         Text = "Enter the app"
                         HorizontalOptions="Center"
-                        VerticalOptions="Center" />
+                        VerticalOptions="Center" />-->
             </VerticalStackLayout>
             <VerticalStackLayout Grid.Row="1"
                                  Spacing="20">
                 <Button Clicked = "Button_SignIn" 
-                        WidthRequest="100"
+                        WidthRequest="140"
+                        BorderColor="ForestGreen"
+                        BorderWidth="1.5"
                         Text = "Sign in"
                         HorizontalOptions="Center"
-                        VerticalOptions="Center" />
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"/>
                 <Button Clicked = "Button_Register" 
-                        WidthRequest="100"
+                        WidthRequest="140"
+                        BorderColor='ForestGreen'
+                        BorderWidth="1.5"
                         Text = "Register"
                         HorizontalOptions="Center"
-                        VerticalOptions="Center" />
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"/>
             </VerticalStackLayout>
         </Grid> 
 </ContentPage>

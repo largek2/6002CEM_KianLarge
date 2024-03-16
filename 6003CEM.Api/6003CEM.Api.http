@@ -1,0 +1,6 @@
+@_6003CEM.Api_HostAddress = http://localhost:5178
+
+GET {{_6003CEM.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

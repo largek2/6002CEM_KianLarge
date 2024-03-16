@@ -34,8 +34,15 @@
 /Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/zh-Hans/Microsoft.Maui.Controls.resources.dll
 /Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/zh-Hant/Microsoft.Maui.Controls.resources.dll
 /Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/runtimeconfig.bin
+/Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/CommunityToolkit.Maui.dll
+/Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/CommunityToolkit.Maui.Core.dll
+/Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/CommunityToolkit.Mvvm.dll
 /Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/Supabase.Functions.dll
 /Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/Supabase.Gotrue.dll
+/Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/Microsoft.EntityFrameworkCore.dll
+/Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/Microsoft.Extensions.Caching.Abstractions.dll
+/Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/Microsoft.Extensions.Caching.Memory.dll
 /Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/Microsoft.Extensions.Configuration.dll
 /Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/Microsoft.Extensions.Configuration.Abstractions.dll
 /Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/Microsoft.Extensions.DependencyInjection.dll

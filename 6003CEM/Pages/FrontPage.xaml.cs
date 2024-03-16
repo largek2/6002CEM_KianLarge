@@ -13,11 +13,6 @@ public partial class FrontPage : ContentPage
         InitializeComponent();
     }
 
-    private async void Button_Clicked(object? sender, EventArgs e)
-    {
-        await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
-    }
-
     private async void Button_SignIn(object? sender, EventArgs e)
     {
         await Shell.Current.GoToAsync(nameof(SigninPage));
