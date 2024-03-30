@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:vm="clr-namespace:_6003CEM.ViewModels"
+             xmlns:models="clr-namespace:_6003CEM.Models"
+             x:Class="_6003CEM.Pages.ProductsPage"
+             Title="Products"
+             x:DataType="vm:ProductsViewModel">
+    <ContentPage.Triggers>
+        
+        <DataTrigger TargetType="ContentPage"
+                     Binding="{Binding FromSearch }" 
+                     Value="true" >
+            <Setter Property="Title" Value="Search for products" />
+        </DataTrigger> 
+    </ContentPage.Triggers>
+    
+    <Grid RowDefinitions="Auto, *">
+        <SearchBar Grid.Row="0" 
+                   x:Name="searchBar"
+                   BackgroundColor="White"
+                   Placeholder="Search for products..."
+                   CancelButtonColor="Crimson"
+                   SearchCommand="{Binding SearchProductsCommand}"
+                   SearchCommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}"/>
+        <ScrollView Grid.Row="1"
+                    Margin="5">
+            <VerticalStackLayout>
+                <CollectionView ItemsSource="{Binding Products}">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" 
+                                           ItemSpacing="10"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Product">
+                            <Border Padding="10" StrokeShape="RoundRectangle 8" Margin="0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/> 
+                                        <ColumnDefinition Width="Auto"/> 
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/> 
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    
+                                    <Label Grid.Row="0" Grid.Column="0" 
+                                           Text="{Binding Name}" 
+                                           Padding="0,10,0,0"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           VerticalOptions="Center"/>
+                                    
+                                    <Label Grid.Row="1" Grid.Column="0" 
+                                           Text="{Binding Price, StringFormat='£{0:N2}'}"
+                                           Padding="0,0,0,40"
+                                           FontSize="12"
+                                           VerticalOptions="Center"/>
+                                    
+                                    <Border Grid.Row="1" Grid.Column="0" 
+                                            StrokeShape="RoundRectangle 20" 
+                                            BackgroundColor="Crimson"
+                                            HeightRequest="30"
+                                            HorizontalOptions="Center"
+                                            Padding="20,5" >
+                                        <HorizontalStackLayout Spacing="5">
+                                            <Label Text="View Product" 
+                                                   TextColor="White"/>
+                                        </HorizontalStackLayout>
+                                    </Border>    
+                                    
+                                    <Image Grid.RowSpan="2" Grid.Column="1" 
+                                        Source="{Binding Image}" 
+                                        HorizontalOptions="End" 
+                                        VerticalOptions="Center"
+                                        HeightRequest="100"
+                                        WidthRequest="100"/>
+                                </Grid>
+                            </Border>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>    
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>    
+    
+</ContentPage>

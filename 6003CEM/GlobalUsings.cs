@@ -5,3 +5,5 @@ global using _6003CEM.Models;
 global using _6003CEM.ViewModels;
 global using _6003CEM.Pages;
 global using CommunityToolkit.Mvvm.ComponentModel;
+global using CommunityToolkit.Mvvm.Input;
+

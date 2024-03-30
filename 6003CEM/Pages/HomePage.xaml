@@ -2,6 +2,7 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:vm="clr-namespace:_6003CEM.ViewModels"
              xmlns:models="clr-namespace:_6003CEM.Models"
              x:Class="_6003CEM.Pages.HomePage"
@@ -13,9 +14,13 @@
             <Border StrokeShape="RoundRectangle 25" 
                     StrokeThickness="2" 
                     Stroke="Crimson">
-                <Label Text = "Search here..." 
+                <Label Text = "Click here for search..." 
                        FontSize="14"
                        Padding="10, 15"/>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoToProductsPageCommand}"
+                                          CommandParameter="{x:Boolean true}"/>
+                </Border.GestureRecognizers>
             </Border>
             
             <BoxView HeightRequest="10"
@@ -29,7 +34,12 @@
                 <Label Grid.Column="1"
                        Text = "View all" 
                        HorizontalOptions="End" 
-                       TextDecorations="Underline"/>
+                       TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToProductsPageCommand}"
+                                              CommandParameter="{x:Boolean false}"/>
+                    </Label.GestureRecognizers>
+                </Label>    
             </Grid>   
             
             <FlexLayout BindableLayout.ItemsSource="{Binding 
@@ -40,7 +50,7 @@
                         <Border StrokeShape="RoundRectangle 10"
                                 StrokeThickness="0" 
                                 FlexLayout.Basis="50%"
-                                Padding="0"
+                                Padding="5"
                                 Margin="2" >
                             <Grid RowDefinitions="150, Auto, auto, Auto" 
                                   RowSpacing="5">
@@ -50,13 +60,24 @@
                                        Width="130"/>
                                 <Label Grid.Row="1"
                                        Text="{Binding Name}" 
-                                       HorizontalOptions="Center"/>
-                                <Grid Grid.Row="2"
-                                      ColumnDefinitions="*, *">
-                                    <Label Grid.Column="0" 
-                                           Text="{Binding Price, StringFormat='£{0:N2}' }"/>
-                                </Grid>
-                            </Grid>    
+                                       HorizontalOptions="Center"
+                                       FontAttributes="Bold"
+                                       FontSize="15"/>
+                                <Label Grid.Row="2"
+                                       Text="{Binding Price, StringFormat='£{0:N2}' }"
+                                       HorizontalOptions="Center" 
+                                       FontSize="12"/>
+                                <Button Grid.Row="3"
+                                        Text = "View product"
+                                        BackgroundColor="Crimson"
+                                        TextColor="White"
+                                        FontSize="13"
+                                        CornerRadius="20" 
+                                        VerticalOptions="End"
+                                        HorizontalOptions="Center"
+                                        HeightRequest="0"
+                                        Padding="35, 0, 35, 0"/>
+                            </Grid>  
                         </Border>    
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>

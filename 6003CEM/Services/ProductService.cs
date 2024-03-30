@@ -95,7 +95,7 @@ namespace _6003CEM.Services
             _products.OrderBy(p => Guid.NewGuid())
                 .Take(count);
 
-        public IEnumerable<Product> GetProducts(string searchTerm) =>
+        public IEnumerable<Product> SearchProducts(string searchTerm) =>
             string.IsNullOrWhiteSpace(searchTerm)
                 ? _products
                 : _products.Where(p => p.Name.Contains(searchTerm, StringComparison.OrdinalIgnoreCase));
