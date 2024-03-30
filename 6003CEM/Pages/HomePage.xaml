@@ -2,8 +2,67 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="_6003CEM.Pages.HomePage">
-    <ContentPage.Content>
-        
-    </ContentPage.Content>
+             xmlns:vm="clr-namespace:_6003CEM.ViewModels"
+             xmlns:models="clr-namespace:_6003CEM.Models"
+             x:Class="_6003CEM.Pages.HomePage"
+             Title="Home"
+             x:DataType="vm:HomeViewModel">
+    <ScrollView>
+        <VerticalStackLayout Padding="15" Spacing="10">
+            
+            <Border StrokeShape="RoundRectangle 25" 
+                    StrokeThickness="2" 
+                    Stroke="Crimson">
+                <Label Text = "Search here..." 
+                       FontSize="14"
+                       Padding="10, 15"/>
+            </Border>
+            
+            <BoxView HeightRequest="10"
+                     Color="White"/>
+            
+            <Grid ColumnDefinitions="*, *">
+                <Label Grid.Column="0"
+                       Text = "Popular Products" 
+                       VerticalOptions="End"
+                       FontSize="18"/>
+                <Label Grid.Column="1"
+                       Text = "View all" 
+                       HorizontalOptions="End" 
+                       TextDecorations="Underline"/>
+            </Grid>   
+            
+            <FlexLayout BindableLayout.ItemsSource="{Binding 
+            Products}"
+                        Wrap="Wrap">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="models:Product">
+                        <Border StrokeShape="RoundRectangle 10"
+                                StrokeThickness="0" 
+                                FlexLayout.Basis="50%"
+                                Padding="0"
+                                Margin="2" >
+                            <Grid RowDefinitions="150, Auto, auto, Auto" 
+                                  RowSpacing="5">
+                                <Image Grid.Row="0"
+                                       Source="{Binding Image}" 
+                                       HeightRequest="150"
+                                       Width="130"/>
+                                <Label Grid.Row="1"
+                                       Text="{Binding Name}" 
+                                       HorizontalOptions="Center"/>
+                                <Grid Grid.Row="2"
+                                      ColumnDefinitions="*, *">
+                                    <Label Grid.Column="0" 
+                                           Text="{Binding Price, StringFormat='£{0:N2}' }"/>
+                                </Grid>
+                            </Grid>    
+                        </Border>    
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+                
+            </FlexLayout>
+            
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

@@ -8,12 +8,6 @@ public partial class AppShell : Shell
     {
         InitializeComponent();
         RegisterRoutes();
-        RegisterForRoute<AddProductPage>();
-    }
-
-    protected void RegisterForRoute<T>()
-    {
-        Routing.RegisterRoute(typeof(T).Name, typeof(T));
     }
 
     private readonly static Type[] RoutablePageTypes =

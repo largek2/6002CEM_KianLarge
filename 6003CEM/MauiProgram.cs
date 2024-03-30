@@ -1,10 +1,8 @@
-﻿using _6003CEM.Models;
-using _6003CEM.Services;
-using _6003CEM.PageModels;
-using _6003CEM.Pages;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
-using Supabase;
+using _6003CEM.Services;
+using _6003CEM.Pages;
+using _6003CEM.ViewModels;
 
 namespace _6003CEM;
 public static class MauiProgram
@@ -12,30 +10,33 @@ public static class MauiProgram
     public static MauiApp CreateMauiApp()
     {
         var builder = MauiApp.CreateBuilder();
-        builder.UseMauiApp<App>().UseMauiApp<App>().ConfigureFonts(fonts =>
-        {
-            fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-            fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-        }).UseMauiCommunityToolkit();
-        
-        var url = AppConfig.SUPABASE_URL;
-        var key = AppConfig.SUPABASE_KEY;
-        builder.Services.AddSingleton(provider => new Supabase.Client(url, key));
-        
-        // Add PageModels
-        builder.Services.AddSingleton<ProductListingPageModel>();
-        builder.Services.AddTransient<AddProductPageModel>();
+        builder
+            .UseMauiApp<App>()
+            .UseMauiCommunityToolkit()
+            .ConfigureFonts(fonts =>
+            {
+                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+            });
 
-        // Add Views
-        builder.Services.AddSingleton<ProductListingPage>();
-        builder.Services.AddTransient<AddProductPage>();
-        
-        // Add Data Service
-        builder.Services.AddSingleton<IDataService, DataService>();
-        
 #if DEBUG
         builder.Logging.AddDebug();
+#else
+        builder.Logging.AddConsole();
 #endif
+        AddProductServices(builder.Services);
         return builder.Build();
+    }
+
+    private static IServiceCollection AddProductServices(IServiceCollection services)
+    {
+        services.AddSingleton<ProductService>(provider =>
+        {
+            var logger = provider.GetRequiredService<ILogger<ProductService>>();
+            var productService = new ProductService(logger);
+            return productService;
+        });
+        services.AddSingletonWithShellRoute<HomePage, HomeViewModel>(nameof(HomePage));
+        return services;
     }
 }

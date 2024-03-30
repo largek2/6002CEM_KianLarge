@@ -1,20 +1,20 @@
-using Postgrest.Attributes;
-using Postgrest.Models;
+using System;
+using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace _6003CEM.Models;
-
-[Table ("products")]
-public class Product : BaseModel
+namespace _6003CEM.Models
 {
-    [PrimaryKey ("id", false)]
-    public int Id { get; set; }
-    
-    [Column("name")]
-    public string Title { get; set; }
-    
-    [Column("price")]
-    public double Price { get; set; }
-    
-    [Column("image_url")]
-    public string Image { get; set; }
+    public partial class Product : ObservableObject
+    {
+        public string Name { get; set; }
+        public string Image { get; set; }
+        public double Price { get; set; }
+
+        [ObservableProperty, 
+         NotifyPropertyChangedFor(nameof(Amount))]
+        private int _cartQuantity;
+
+        public double Amount => CartQuantity * Price;
+
+        public Product Clone() => MemberwiseClone() as Product;
+    } 
 }
