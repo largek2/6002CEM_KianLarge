@@ -31,12 +31,23 @@ namespace _6003CEM.ViewModels
         {
             Products.Clear();
             Searching = true;
+            await Task.Delay(1500);
             //var products = _productService.SearchProducts(searchTerm);
             foreach (var product in _productService.SearchProducts(searchTerm))
             {
                 Products.Add(product);
             }
             Searching = false;
+        }
+        
+        [RelayCommand]
+        private async Task GoToProductDetailsPage(Product product)
+        {
+            var arguments = new Dictionary<string, object>
+            {
+                [nameof(ProductDetailsViewModel.Product)] = product
+            };
+            await Shell.Current.GoToAsync(nameof(ProductDetailsPage), animate: true, arguments);
         }
     }    
 }

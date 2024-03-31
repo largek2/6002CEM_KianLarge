@@ -27,6 +27,5 @@ public partial class AppShell : Shell
     private async void Signout_Clicked(object sender, EventArgs e)
     {
         await Shell.Current.DisplayAlert("Alert", "You have just signed out", "Okay");
-        
     }
 }

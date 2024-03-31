@@ -15,5 +15,23 @@ namespace _6003CEM.Pages
             _productsViewModel = productsViewModel;
             BindingContext = _productsViewModel;
         }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            if (_productsViewModel.FromSearch)
+            {
+                await Task.Delay(150);
+                searchBar.Focus();
+            }
+        }
+        
+        void searchBar_TextChanged(System.Object sender, Microsoft.Maui.Controls.TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(e.OldTextValue) && string.IsNullOrWhiteSpace(e.NewTextValue))
+            {
+                _productsViewModel.SearchProductsCommand.Execute(null);
+            }
+        }
     }
 }

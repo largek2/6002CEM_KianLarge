@@ -354,3 +354,5 @@
 /Users/kian/RiderProjects/App/6003CEM/obj/Debug/net8.0-ios/iossimulator-arm64/resizetizer/r/Resources/fajita.png
 /Users/kian/RiderProjects/App/6003CEM/obj/Debug/net8.0-ios/iossimulator-arm64/resizetizer/r/Resources/nachos.png
 /Users/kian/RiderProjects/App/6003CEM/obj/Debug/net8.0-ios/iossimulator-arm64/resizetizer/r/Resources/churros.png
+/Users/kian/RiderProjects/App/6003CEM/obj/Debug/net8.0-ios/iossimulator-arm64/resizetizer/r/Resources/plus.png
+/Users/kian/RiderProjects/App/6003CEM/obj/Debug/net8.0-ios/iossimulator-arm64/resizetizer/r/Resources/minus.png

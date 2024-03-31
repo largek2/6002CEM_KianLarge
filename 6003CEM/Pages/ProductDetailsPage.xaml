@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:vm="clr-namespace:_6003CEM.ViewModels"
+             xmlns:models="clr-namespace:_6003CEM.Models"
+             x:Class="_6003CEM.Pages.ProductDetailsPage"
+             Title="Details"
+             Shell.NavBarIsVisible="False"
+             x:DataType="vm:ProductDetailsViewModel">
+    
+    <Grid>
+        <ScrollView Padding="10">
+            <VerticalStackLayout Spacing="10">
+                <Image Source="{Binding Product.Image}" 
+                       HeightRequest="220"
+                       WidthRequest="220"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+                <Label Text="{Binding Product.Name}" 
+                       FontSize="20"
+                       HorizontalOptions="Center"/>
+                <Label Text="{Binding Product.Price, StringFormat='£{0:N2}'}" 
+                       FontAttributes="Bold"/> 
+                <Label Text="Description"
+                       FontSize="15"
+                       Margin="0,10"/>
+                <Label FontSize="13"
+                       LineHeight="1.5"
+                       Text="This is temporary text.This is temporary text.This is temporary text.
+                       This is temporary text.This is temporary text.This is temporary text.
+                       This is temporary text.This is temporary text.This is temporary text."/>
+            </VerticalStackLayout>
+        </ScrollView>
+        <Border x:Name="bottomBox"
+                Stroke="Crimson"
+                StrokeThickness="1"
+                Margin="-1"
+                VerticalOptions="End"
+                HeightRequest="150"
+                Padding="15">
+            <Grid RowDefinitions="Auto, Auto"
+                  ColumnDefinitions="*, *" >
+                <Label Grid.Row="0" 
+                       Grid.Column="0"
+                       Text="{Binding Product.Amount, StringFormat='£{0:N2}'}"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"/>
+                <Grid Grid.Row="0"
+                      Grid.Column="1"
+                      ColumnDefinitions="50,40,50" 
+                      HorizontalOptions="End"
+                      VerticalOptions="Center" >
+                    <ImageButton Grid.Column="0"
+                           Source="minus"
+                           HeightRequest="30"
+                           WidthRequest="30" 
+                           VerticalOptions="Center">
+                        <ImageButton.Behaviors>
+                            <toolkit:IconTintColorBehavior TintColor="Crimson" />
+                        </ImageButton.Behaviors>
+                    </ImageButton> 
+                </Grid>      
+            </Grid>
+        </Border>    
+        <ImageButton Source="sign_out" 
+                     VerticalOptions="Start"
+                     HorizontalOptions="Start"
+                     Margin="10"
+                     Clicked="ImageButton_Clicked">
+            <ImageButton.Behaviors>
+                <toolkit:IconTintColorBehavior TintColor="Crimson" />
+            </ImageButton.Behaviors>
+        </ImageButton>    
+    </Grid>
+</ContentPage>

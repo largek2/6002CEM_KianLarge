@@ -24,7 +24,8 @@
                    Placeholder="Search for products..."
                    CancelButtonColor="Crimson"
                    SearchCommand="{Binding SearchProductsCommand}"
-                   SearchCommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}"/>
+                   SearchCommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}"
+                   TextChanged="searchBar_TextChanged"/>
         <ScrollView Grid.Row="1"
                     Margin="5">
             <VerticalStackLayout>
@@ -60,17 +61,24 @@
                                            FontSize="12"
                                            VerticalOptions="Center"/>
                                     
-                                    <Border Grid.Row="1" Grid.Column="0" 
+                                    <HorizontalStackLayout Grid.Row="1" Grid.Column="0" Spacing="5"
+                                                           Padding="0,30,0,0">
+                                        <Border Grid.Row="1" Grid.Column="0" 
                                             StrokeShape="RoundRectangle 20" 
                                             BackgroundColor="Crimson"
-                                            HeightRequest="30"
+                                            HeightRequest="40"
                                             HorizontalOptions="Center"
                                             Padding="20,5" >
-                                        <HorizontalStackLayout Spacing="5">
                                             <Label Text="View Product" 
                                                    TextColor="White"/>
-                                        </HorizontalStackLayout>
-                                    </Border>    
+                                            <Border.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding 
+                                                Source={x:RelativeSource AncestorType={x:Type vm:ProductsViewModel}},
+                                                Path=GoToProductDetailsPageCommand}" 
+                                                                      CommandParameter="{Binding .}"/>
+                                            </Border.GestureRecognizers>
+                                    </Border>
+                                    </HorizontalStackLayout>
                                     
                                     <Image Grid.RowSpan="2" Grid.Column="1" 
                                         Source="{Binding Image}" 
@@ -83,9 +91,31 @@
 
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
+                    <CollectionView.EmptyView>
+                        <VerticalStackLayout HorizontalOptions="Center"
+                                             VerticalOptions="Center">
+                            <Label Text="No products were found" 
+                                   Padding="60"
+                                   FontSize="20"
+                                   HorizontalTextAlignment="Center">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label"
+                                                 Binding="{Binding Searching}"
+                                                 Value="True" >
+                                        <Setter Property="Text"
+                                                Value="Searching..." />
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>    
+                        </VerticalStackLayout>
+                    </CollectionView.EmptyView>
                 </CollectionView>    
             </VerticalStackLayout>
         </ScrollView>
+        <ActivityIndicator Grid.RowSpan="2"
+                           IsRunning="{Binding Searching}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" />
     </Grid>    
     
 </ContentPage>

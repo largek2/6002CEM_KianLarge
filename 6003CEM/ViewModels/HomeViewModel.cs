@@ -25,5 +25,15 @@ namespace _6003CEM.ViewModels
             };
             await Shell.Current.GoToAsync(nameof(ProductsPage), animate: true, arguments);
         }
+
+        [RelayCommand]
+        private async Task GoToProductDetailsPage(Product product)
+        {
+            var arguments = new Dictionary<string, object>
+            {
+                [nameof(ProductDetailsViewModel.Product)] = product
+            };
+            await Shell.Current.GoToAsync(nameof(ProductDetailsPage), animate: true, arguments);
+        }
     }
 }

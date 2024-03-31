@@ -29,6 +29,7 @@
             <Grid ColumnDefinitions="*, *">
                 <Label Grid.Column="0"
                        Text = "Popular Products" 
+                       FontAttributes="Bold"
                        VerticalOptions="End"
                        FontSize="18"/>
                 <Label Grid.Column="1"
@@ -76,8 +77,18 @@
                                         VerticalOptions="End"
                                         HorizontalOptions="Center"
                                         HeightRequest="0"
-                                        Padding="35, 0, 35, 0"/>
-                            </Grid>  
+                                        Padding="35, 0, 35, 0"
+                                        Command="{Binding 
+                                                Source={x:RelativeSource AncestorType={x:Type vm:HomeViewModel}},
+                                                Path=GoToProductDetailsPageCommand}" 
+                                        CommandParameter="{Binding .}"/>
+                            </Grid>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding 
+                                                Source={x:RelativeSource AncestorType={x:Type vm:HomeViewModel}},
+                                                Path=GoToProductDetailsPageCommand}" 
+                                                      CommandParameter="{Binding .}"/>
+                            </Border.GestureRecognizers>
                         </Border>    
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
