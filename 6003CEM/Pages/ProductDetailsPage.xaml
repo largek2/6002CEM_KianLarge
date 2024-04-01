@@ -10,6 +10,18 @@
              Shell.NavBarIsVisible="False"
              x:DataType="vm:ProductDetailsViewModel">
     
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="QuantityButton" TargetType="ImageButton">
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="WidthRequest" Value="40" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Padding" Value="0" />
+            </Style>    
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <Grid>
         <ScrollView Padding="10">
             <VerticalStackLayout Spacing="10">
@@ -19,11 +31,13 @@
                        HorizontalOptions="Center"
                        VerticalOptions="Center"/>
                 <Label Text="{Binding Product.Name}" 
-                       FontSize="20"
+                       FontSize="22"
+                       FontAttributes="Bold"
                        HorizontalOptions="Center"/>
                 <Label Text="{Binding Product.Price, StringFormat='£{0:N2}'}" 
-                       FontAttributes="Bold"/> 
-                <Label Text="Description"
+                       FontAttributes="Bold"
+                       FontSize="18"/> 
+                <Label Text="Description:"
                        FontSize="15"
                        Margin="0,10"/>
                 <Label FontSize="13"
@@ -38,14 +52,15 @@
                 StrokeThickness="1"
                 Margin="-1"
                 VerticalOptions="End"
-                HeightRequest="150"
+                HeightRequest="75"
                 Padding="15">
             <Grid RowDefinitions="Auto, Auto"
                   ColumnDefinitions="*, *" >
                 <Label Grid.Row="0" 
                        Grid.Column="0"
                        Text="{Binding Product.Amount, StringFormat='£{0:N2}'}"
-                       FontSize="18"
+                       FontSize="22"
+                       TextColor="Crimson"
                        FontAttributes="Bold"
                        VerticalOptions="Center"/>
                 <Grid Grid.Row="0"
@@ -55,9 +70,23 @@
                       VerticalOptions="Center" >
                     <ImageButton Grid.Column="0"
                            Source="minus"
-                           HeightRequest="30"
-                           WidthRequest="30" 
-                           VerticalOptions="Center">
+                           Style="{StaticResource QuantityButton}"
+                           Command="{Binding RemoveFromCartCommand}">
+                        <ImageButton.Behaviors>
+                            <toolkit:IconTintColorBehavior TintColor="Crimson" />
+                        </ImageButton.Behaviors>
+                    </ImageButton> 
+                    <Label Grid.Column="1" 
+                           Text="{Binding Product.CartQuantity}"
+                           TextColor="Crimson"
+                           FontAttributes="Bold"
+                           FontSize="24"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"/>
+                    <ImageButton Grid.Column="2"
+                                 Source="plus"
+                                 Style="{StaticResource QuantityButton}"
+                                 Command="{Binding AddToCartCommand}">
                         <ImageButton.Behaviors>
                             <toolkit:IconTintColorBehavior TintColor="Crimson" />
                         </ImageButton.Behaviors>

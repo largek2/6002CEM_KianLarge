@@ -7,22 +7,24 @@ public partial class AppShell : Shell
     public AppShell()
     {
         InitializeComponent();
-        RegisterRoutes();
+        
+        Routing.RegisterRoute(nameof(CartPage), typeof(CartPage));
+        // RegisterRoutes();
     }
 
-    private readonly static Type[] RoutablePageTypes =
-    [
-        typeof(SigninPage),
-        typeof(RegisterPage),
-    ];
-
-    private void RegisterRoutes()
-    {
-        foreach (var pageType in RoutablePageTypes)
-        {
-            Routing.RegisterRoute(pageType.Name, pageType);
-        }
-    }
+    // private readonly static Type[] RoutablePageTypes =
+    // [
+    //     typeof(SigninPage),
+    //     typeof(RegisterPage),
+    // ];
+    //
+    // private void RegisterRoutes()
+    // {
+    //     foreach (var pageType in RoutablePageTypes)
+    //     {
+    //         Routing.RegisterRoute(pageType.Name, pageType);
+    //     }
+    // }
 
     private async void Signout_Clicked(object sender, EventArgs e)
     {

@@ -2,8 +2,39 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="_6003CEM.Pages.CartPage">
-    <ContentPage.Content>
-        
-    </ContentPage.Content>
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:vm="clr-namespace:_6003CEM.ViewModels"
+             xmlns:models="clr-namespace:_6003CEM.Models"
+             x:Class="_6003CEM.Pages.CartPage"
+             Title="Cart"
+             x:DataType="vm:CartViewModel">
+    <Grid>
+        <CollectionView ItemsSource="{Binding Products}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Product">
+                    <Border Padding="10"
+                            >
+                        <Grid ColumnDefinitions="80, 80, 50, *, 80, 25" 
+                              ColumnSpacing="10">
+                            <Image Grid.Column="0" 
+                                   Source="{Binding Image}" />
+                            <VerticalStackLayout Grid.Column="1"
+                                                 VerticalOptions="Center"
+                                                 Spacing="8">
+                                                 <Label Text="{Binding Name}" />
+                                                 <Label Text="{Binding Price, StringFormat='£{0:N2}'}" />
+                            </VerticalStackLayout>
+                            
+                            <Label Grid.Column="4" 
+                                   Text="{Binding Amount, StringFormat='£{0:N2}'}"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+                        </Grid>   
+                    </Border>
+                </DataTemplate>
+                
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+    
 </ContentPage>
