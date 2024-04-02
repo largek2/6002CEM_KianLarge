@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="_6003CEM.Pages.CheckoutPage"
+             Title="Checkout"
+             Shell.TabBarIsVisible="False">
+    <VerticalStackLayout VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         Spacing="20">
+        <Image Source="logo"
+               HeightRequest="180"
+               WidthRequest="180" />
+        <Label Text="Your order has been placed!"
+               FontSize="20"
+               TextColor="Crimson" 
+               HorizontalTextAlignment="Center"/>
+        <Button x:Name="homeButton" 
+               Text="Go back to home screen" 
+                BackgroundColor="Crimson"
+                CornerRadius="20"
+                HorizontalOptions="Center"
+                Padding="75,10"
+                Clicked="homeButton_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

@@ -9,22 +9,9 @@ public partial class AppShell : Shell
         InitializeComponent();
         
         Routing.RegisterRoute(nameof(CartPage), typeof(CartPage));
-        // RegisterRoutes();
+        Routing.RegisterRoute(nameof(CheckoutPage), typeof(CheckoutPage));
     }
 
-    // private readonly static Type[] RoutablePageTypes =
-    // [
-    //     typeof(SigninPage),
-    //     typeof(RegisterPage),
-    // ];
-    //
-    // private void RegisterRoutes()
-    // {
-    //     foreach (var pageType in RoutablePageTypes)
-    //     {
-    //         Routing.RegisterRoute(pageType.Name, pageType);
-    //     }
-    // }
 
     private async void Signout_Clicked(object sender, EventArgs e)
     {

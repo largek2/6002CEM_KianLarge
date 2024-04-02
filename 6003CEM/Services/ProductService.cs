@@ -14,61 +14,71 @@ namespace _6003CEM.Services
             {
                 Name = "Taco",
                 Image = "taco",
-                Price = 3.99
+                Price = 3.99,
+                Description = "Test"
             },
             new Product
             {
                 Name = "Burrito",
                 Image = "burrito",
-                Price = 4.49
+                Price = 4.49,
+                Description = "Test"
             },
             new Product
             {
                 Name = "Quesadilla",
                 Image = "ques",
-                Price = 4.29
+                Price = 4.29,
+                Description = "Test"
             }, 
             new Product
             {
                 Name = "Supreme Rice Bowl",
                 Image = "ricebowl",
-                Price = 4.09
+                Price = 4.09,
+                Description = "Test"
             },
             new Product
             {
                 Name = "Supreme Veggie Bowl",
                 Image = "rice_veggie",
-                Price = 3.79
+                Price = 3.79,
+                Description = "Test"
             },
             new Product
             {
                 Name = "Loaded Nachos",
                 Image = "nachos",
-                Price = 3.99
+                Price = 3.99,
+                Description = "Test"
             },
             new Product
             {
                 Name = "Fajitas",
                 Image = "fajita",
-                Price = 4.09
+                Price = 4.09,
+                Description = "Test"
             },
             new Product
             {
                 Name = "Churros ",
                 Image = "churros",
-                Price = 2.99
+                Price = 2.99,
+                Description = "Test"
             },
             new Product
             {
                 Name = "Coca Cola",
                 Image = "coke",
-                Price = 1.99
+                Price = 1.99,
+                Description = "Test"
             }, 
             new Product
             {
                 Name = "Water",
                 Image = "water",
-                Price = 1.79
+                Price = 1.79,
+                Description = "Test"
             }
         };
 

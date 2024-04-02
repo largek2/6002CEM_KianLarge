@@ -108,4 +108,9 @@
         </Border>
     </Shell.FlyoutFooter>
     
+    <ShellContent
+        Title="Products"
+        ContentTemplate="{DataTemplate pages:ProductsPage}"
+        Route="ProductsPage" />
+    
 </Shell>

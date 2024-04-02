@@ -18,7 +18,7 @@ namespace _6003CEM.Pages
 
         async void ImageButton_Clicked(System.Object sender, System.EventArgs e)
         {
-            await Shell.Current.GoToAsync("..");
+            await Shell.Current.GoToAsync("//HomePage", animate: true);
         }
     }
 }

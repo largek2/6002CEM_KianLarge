@@ -40,6 +40,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = _6003CEM.Pages.CartPage.xa
 build_metadata.AdditionalFiles.TargetPath = Pages/CartPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages/CartPage.xaml
 
+[/Users/kian/RiderProjects/App/6003CEM/Pages/CheckoutPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = _6003CEM.Pages.CheckoutPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/CheckoutPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/CheckoutPage.xaml
+
 [/Users/kian/RiderProjects/App/6003CEM/Pages/FrontPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = _6003CEM.Pages.FrontPage.xaml

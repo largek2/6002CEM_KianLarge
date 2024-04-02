@@ -8,33 +8,94 @@
              x:Class="_6003CEM.Pages.CartPage"
              Title="Cart"
              x:DataType="vm:CartViewModel">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Clear Cart"
+                     Command="{Binding ClearCartCommand}"/>
+    </ContentPage.ToolbarItems>
     <Grid>
-        <CollectionView ItemsSource="{Binding Products}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="models:Product">
-                    <Border Padding="10"
-                            >
-                        <Grid ColumnDefinitions="80, 80, 50, *, 80, 25" 
-                              ColumnSpacing="10">
-                            <Image Grid.Column="0" 
-                                   Source="{Binding Image}" />
-                            <VerticalStackLayout Grid.Column="1"
-                                                 VerticalOptions="Center"
-                                                 Spacing="8">
-                                                 <Label Text="{Binding Name}" />
-                                                 <Label Text="{Binding Price, StringFormat='£{0:N2}'}" />
-                            </VerticalStackLayout>
-                            
-                            <Label Grid.Column="4" 
-                                   Text="{Binding Amount, StringFormat='£{0:N2}'}"
-                                   HorizontalOptions="Center"
-                                   VerticalOptions="Center" />
-                        </Grid>   
-                    </Border>
-                </DataTemplate>
-                
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        <ScrollView>
+            <CollectionView ItemsSource="{Binding Products}">
+                <CollectionView.EmptyView>
+                    <VerticalStackLayout HorizontalOptions="Center"
+                                         VerticalOptions="Center">
+                        <Label Text="No products are in the cart" 
+                               Padding="40"
+                               FontSize="20"
+                               HorizontalTextAlignment="Center">
+                        </Label>    
+                    </VerticalStackLayout>
+                </CollectionView.EmptyView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Product">
+                        <Border>
+                            <Grid ColumnDefinitions="80, 80, 50, *, 80, 25" 
+                                  ColumnSpacing="10"
+                                  Padding="10">
+                                <Image Grid.Column="0" 
+                                       Source="{Binding Image}" 
+                                       HeightRequest="100"/>
+                                <VerticalStackLayout Grid.Column="1"
+                                                     VerticalOptions="Center"
+                                                     Spacing="8">
+                                                     <Label Text="{Binding Name}" 
+                                                            FontAttributes="Bold"/>
+                                                     <Label Text="{Binding Price, StringFormat='£{0:N2}'}" />
+                                </VerticalStackLayout>
+                                
+                                <Label Grid.Column="4" 
+                                       Text="{Binding Amount, StringFormat='£{0:N2}'}"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center" />
+                                <StackLayout Grid.Column="5" 
+                                             VerticalOptions="Center" 
+                                             HorizontalOptions="Center" 
+                                             Spacing="5">
+                                    <Label Text="{Binding CartQuantity}" 
+                                           VerticalOptions="Center" 
+                                           HorizontalOptions="Center"/>
+                                    <Image Source="bin" 
+                                           HorizontalOptions="Center" 
+                                           VerticalOptions="Center">
+                                        <Image.Behaviors>
+                                            <toolkit:IconTintColorBehavior TintColor="Crimson"/>
+                                        </Image.Behaviors>
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding 
+                                            Source={x:RelativeSource AncestorType={x:Type vm:CartViewModel}}, 
+                                            Path=RemoveCartCommand}"
+                                                                  CommandParameter="{Binding Name}"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </StackLayout>
+                            </Grid>   
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+        <Border x:Name="bottomBox"
+                StrokeThickness="0"
+                Margin="-1"
+                VerticalOptions="End"
+                HeightRequest="75"
+                Padding="15">
+            <Grid ColumnDefinitions="*, *">
+                <Label Grid.Column="0"
+                       Text="{Binding TotalAmount, StringFormat='£{0:N2}'}"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"/>
+                <Button Grid.Column="1"
+                        Text="Place Order"
+                        BackgroundColor="Crimson" 
+                        CornerRadius="20"
+                        VerticalOptions="Center"
+                        HorizontalOptions="End"
+                        Padding="30,10"
+                        Command="{Binding PlaceOrderCommand}"/>
+            </Grid>    
+        </Border>   
     </Grid>
-    
 </ContentPage>

@@ -42,9 +42,7 @@
                        Margin="0,10"/>
                 <Label FontSize="13"
                        LineHeight="1.5"
-                       Text="This is temporary text.This is temporary text.This is temporary text.
-                       This is temporary text.This is temporary text.This is temporary text.
-                       This is temporary text.This is temporary text.This is temporary text."/>
+                       Text="{Binding Product.Description}" />
             </VerticalStackLayout>
         </ScrollView>
         <Border x:Name="bottomBox"
