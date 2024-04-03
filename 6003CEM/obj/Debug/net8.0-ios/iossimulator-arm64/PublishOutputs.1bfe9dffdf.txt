@@ -66,6 +66,10 @@
 /Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/Newtonsoft.Json.dll
 /Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/Supabase.Postgrest.dll
 /Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/Supabase.Realtime.dll
+/Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/SQLite-net.dll
+/Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/SQLitePCLRaw.batteries_v2.dll
+/Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/SQLitePCLRaw.core.dll
+/Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/SQLitePCLRaw.provider.sqlite3.dll
 /Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/Supabase.Core.dll
 /Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/Supabase.dll
 /Users/kian/RiderProjects/App/6003CEM/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../6003CEM.app/Supabase.Storage.dll

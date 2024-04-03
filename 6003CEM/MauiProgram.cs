@@ -2,7 +2,6 @@
 using CommunityToolkit.Maui;
 using _6003CEM.Services;
 using _6003CEM.Pages;
-using _6003CEM.ViewModels;
 
 namespace _6003CEM;
 public static class MauiProgram
@@ -18,6 +17,10 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
+
+        builder.Services.AddSingleton<LocalDbService>();
+        builder.Services.AddTransient<NoteListPage>();
+        builder.Services.AddTransient<FrontPage>();
 
 #if DEBUG
         builder.Logging.AddDebug();

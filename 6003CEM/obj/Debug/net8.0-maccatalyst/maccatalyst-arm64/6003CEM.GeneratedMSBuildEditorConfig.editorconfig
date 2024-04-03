@@ -58,6 +58,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = _6003CEM.Pages.HomePage.xa
 build_metadata.AdditionalFiles.TargetPath = Pages/HomePage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages/HomePage.xaml
 
+[/Users/kian/RiderProjects/App/6003CEM/Pages/NoteListPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = _6003CEM.Pages.NoteListPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/NoteListPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/NoteListPage.xaml
+
 [/Users/kian/RiderProjects/App/6003CEM/Pages/ProductDetailsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = _6003CEM.Pages.ProductDetailsPage.xaml
@@ -69,18 +75,6 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = _6003CEM.Pages.ProductsPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages/ProductsPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages/ProductsPage.xaml
-
-[/Users/kian/RiderProjects/App/6003CEM/Pages/RegisterPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = _6003CEM.Pages.RegisterPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Pages/RegisterPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Pages/RegisterPage.xaml
-
-[/Users/kian/RiderProjects/App/6003CEM/Pages/SigninPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = _6003CEM.Pages.SigninPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Pages/SigninPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Pages/SigninPage.xaml
 
 [/Users/kian/RiderProjects/App/6003CEM/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

@@ -9,25 +9,27 @@
     Title="_6003CEM">
     
     <ShellContent ContentTemplate="{DataTemplate pages:FrontPage}"
-                  Shell.FlyoutBehavior="Disabled"
-                  Shell.FlyoutItemIsVisible="False"/>
+                  Shell.FlyoutBehavior="Disabled" />
     
     <TabBar FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent 
             Title="Home"
-            Icon = "home.png"
+            Icon = "home_crim.png"
             ContentTemplate="{DataTemplate pages:HomePage}"
             Route="HomePage" />
         
         <ShellContent 
             Title="Cart"
-            Icon = "cart.png"
+            Icon = "cart_crim.png"
             ContentTemplate="{DataTemplate pages:CartPage}"
             Route="CartPage" />
+        
+        <ShellContent
+            Title="Notes"
+            Icon="notepad_crim.png"
+            ContentTemplate="{DataTemplate pages:NoteListPage}"
+            Route="NotePage" />
     </TabBar>    
-    
-    <MenuItem Text = "Sign out" 
-              Clicked="Signout_Clicked"/>
     
     <Shell.MenuItemTemplate>
         <DataTemplate>
@@ -55,33 +57,6 @@
             </Grid>
         </DataTemplate>
     </Shell.MenuItemTemplate>
-    
-    <Shell.ItemTemplate>
-        <DataTemplate>
-            <Grid 
-                Padding = "10,20,10, 10"
-                ColumnDefinitions = "Auto, *, Auto"
-                RowDefinitions = "Auto, Auto"
-                ColumnSpacing = "20"
-                RowSpacing = "5" >
-                <Label 
-                    Grid.Column="1"
-                    FontSize="18"
-                    Text="{Binding Title}"
-                    TextColor="Crimson" 
-                    FontAttributes="Bold" />
-                <Image 
-                    Grid.Row="0"
-                    Grid.Column="2"
-                    Source="right_arrow"
-                    HeightRequest="24"
-                    WidthRequest="24" />
-                <BoxView 
-                    Grid.Row="0"
-                    HeightRequest="1" />
-            </Grid>
-        </DataTemplate>
-    </Shell.ItemTemplate>
 
     <Shell.FlyoutHeader>
         <Border BackgroundColor="Crimson"
@@ -107,10 +82,5 @@
                    HorizontalOptions="Center" />
         </Border>
     </Shell.FlyoutFooter>
-    
-    <ShellContent
-        Title="Products"
-        ContentTemplate="{DataTemplate pages:ProductsPage}"
-        Route="ProductsPage" />
     
 </Shell>
