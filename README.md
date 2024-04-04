@@ -5,7 +5,7 @@ Motivation:
 
 The initial plan for the Mexican Fiesta was to create a menu including different categories such as starters, mains, desserts and drinks. However, in the process of planning out the different features to implement, there would be many pages with the same templates and layouts. I decided that I did not want to have the same type of feature just being repeated throughout the app because it would be boring and look lazy. This is when the idea of a food ordering app like Uber Eats came about as this provided different feature opportunities to be able to explore and delve into. The features that were put into effect are going to be covered in the section below in a lot more detail. 
 
-Features 
+Features:
 
 The first feature to be shown is allowing users to be able to filter products available to the user through a search bar. The search bar looks for any products that contain the character string that was inputted by the user. If there is a result, the product will come up with the matching input string, otherwise no products will display on the page. 
 
